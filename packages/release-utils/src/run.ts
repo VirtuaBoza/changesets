@@ -132,7 +132,7 @@ export async function runVersion({
       : "version";
     await execWithOutput(
       "node",
-      ["./node_modules/@abizzle/changesets-cli/bin.js", cmd],
+      ["./node_modules/@changesets/cli/bin.js", cmd],
       { cwd }
     );
   }
