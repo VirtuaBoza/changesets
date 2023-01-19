@@ -13,8 +13,8 @@
     "changelog",
     "commit"
   ],
-  "main": "dist/cli.cjs.js",
-  "module": "dist/cli.esm.js",
+  "main": "dist/changesets-cli.cjs.js",
+  "module": "dist/changesets-cli.esm.js",
   "author": "Changesets Contributors",
   "contributors": [
     "Ben Conolly",
@@ -33,7 +33,7 @@
     "@babel/runtime": "^7.20.1",
     "@abizzle/changesets-apply-release-plan": "^6.1.3",
     "@abizzle/changesets-assemble-release-plan": "^5.2.3",
-    "@changesets/changelog-git": "^0.1.14",
+    "@abizzle/changesets-changelog-git": "^0.1.14",
     "@abizzle/changesets-config": "^2.3.0",
     "@changesets/errors": "^0.1.4",
     "@changesets/get-dependents-graph": "^1.3.5",

@@ -1,6 +1,6 @@
 {
   "changelog": [
-    "@changesets/changelog-github",
+    "@abizzle/changesets-changelog-github",
     { "repo": "changesets/changesets" }
   ],
   "baseBranch": "main",

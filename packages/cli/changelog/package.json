@@ -1,6 +1,6 @@
 {
-  "main": "dist/cli.cjs.js",
-  "module": "dist/cli.esm.js",
+  "main": "dist/changesets-cli.cjs.js",
+  "module": "dist/changesets-cli.esm.js",
   "preconstruct": {
     "source": "../src/changelog"
   }
