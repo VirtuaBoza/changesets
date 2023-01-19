@@ -11,13 +11,13 @@ import {
   Linked,
   PackageGroup,
   SingleChangelogPackageGroup,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 import packageJson from "../package.json";
 import { getDependentsGraph } from "@changesets/get-dependents-graph";
 
 export let defaultWrittenConfig = {
-  $schema: `https://unpkg.com/@changesets/config@${packageJson.version}/schema.json`,
-  changelog: "@changesets/cli/changelog",
+  $schema: `https://unpkg.com/@abizzle/changesets-config@${packageJson.version}/schema.json`,
+  changelog: "@abizzle/changesets-cli/changelog",
   commit: false,
   fixed: [] as Fixed,
   linked: [] as Linked,
@@ -52,7 +52,7 @@ function getNormalizedCommitOption(
     return false;
   }
   if (thing === true) {
-    return ["@changesets/cli/commit", { skipCI: "version" }];
+    return ["@abizzle/changesets-cli/commit", { skipCI: "version" }];
   }
   if (typeof thing === "string") {
     return [thing, null];
@@ -151,7 +151,7 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
         json.changelog,
         null,
         2
-      )} when the only valid values are undefined, false, a module path(e.g. "@changesets/cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@changesets/cli/changelog", { someOption: true }])`
+      )} when the only valid values are undefined, false, a module path(e.g. "@abizzle/changesets-cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@abizzle/changesets-cli/changelog", { someOption: true }])`
     );
   }
 
@@ -191,7 +191,7 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
         json.commit,
         null,
         2
-      )} when the only valid values are undefined or a boolean or a module path (e.g. "@changesets/cli/commit" or "./some-module") or a tuple with a module path and config for the commit message generator (e.g. ["@changesets/cli/commit", { "skipCI": "version" }])`
+      )} when the only valid values are undefined or a boolean or a module path (e.g. "@abizzle/changesets-cli/commit" or "./some-module") or a tuple with a module path and config for the commit message generator (e.g. ["@abizzle/changesets-cli/commit", { "skipCI": "version" }])`
     );
   }
   if (json.baseBranch !== undefined && typeof json.baseBranch !== "string") {

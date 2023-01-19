@@ -1,4 +1,4 @@
-import { PreState, NewChangeset } from "@changesets/types";
+import { PreState, NewChangeset } from "@abizzle/changesets-types";
 import { readPreState } from "@changesets/pre";
 import readChangesets from "@changesets/read";
 

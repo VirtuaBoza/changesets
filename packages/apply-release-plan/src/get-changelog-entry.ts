@@ -2,9 +2,9 @@ import {
   ChangelogFunctions,
   ModCompGroupWithPackage,
   NewChangesetWithCommit,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 
-import { ModCompWithPackage } from "@changesets/types";
+import { ModCompWithPackage } from "@abizzle/changesets-types";
 import startCase from "lodash.startcase";
 import { shouldUpdateDependencyBasedOnConfig } from "./utils";
 

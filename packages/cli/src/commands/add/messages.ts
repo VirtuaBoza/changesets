@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import outdent from "outdent";
 import { log } from "@changesets/logger";
-import { Release, VersionType } from "@changesets/types";
+import { Release, VersionType } from "@abizzle/changesets-types";
 
 export default function printConfirmationMessage(
   changeset: {

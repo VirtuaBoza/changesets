@@ -1,7 +1,7 @@
 // This function takes in changesets and returns one release per
 // package listed in the changesets
 
-import { NewChangeset } from "@changesets/types";
+import { NewChangeset } from "@abizzle/changesets-types";
 import { Package } from "@manypkg/get-packages";
 import { InternalRelease } from "./types";
 

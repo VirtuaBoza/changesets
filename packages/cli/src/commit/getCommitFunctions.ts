@@ -1,4 +1,4 @@
-import { CommitFunctions } from "@changesets/types";
+import { CommitFunctions } from "@abizzle/changesets-types";
 import path from "path";
 import resolveFrom from "resolve-from";
 

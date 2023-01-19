@@ -1,4 +1,4 @@
-import { Config, SingleChangelogPackageGroup } from "@changesets/types";
+import { Config, SingleChangelogPackageGroup } from "@abizzle/changesets-types";
 import { Package } from "@manypkg/get-packages";
 import { InternalRelease } from "./types";
 import { getCurrentHighestVersion, getHighestReleaseType } from "./utils";

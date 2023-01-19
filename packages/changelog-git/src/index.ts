@@ -3,7 +3,7 @@ import {
   VersionType,
   ChangelogFunctions,
   ModCompWithPackage,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 
 const getReleaseLine = async (
   changeset: NewChangesetWithCommit,

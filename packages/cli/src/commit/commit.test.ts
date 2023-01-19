@@ -1,6 +1,6 @@
 import outdent from "outdent";
 import defaultCommitFunctions from ".";
-import { NewChangeset, ReleasePlan } from "@changesets/types";
+import { NewChangeset, ReleasePlan } from "@abizzle/changesets-types";
 
 const simpleChangeset: NewChangeset = {
   summary: "This is a summary",

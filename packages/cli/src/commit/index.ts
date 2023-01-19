@@ -3,7 +3,7 @@ import {
   CommitFunctions,
   ComprehensiveRelease,
   ReleasePlan,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 import outdent from "outdent";
 
 type SkipCI = boolean | "add" | "version";

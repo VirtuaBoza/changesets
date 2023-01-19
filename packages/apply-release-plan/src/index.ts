@@ -5,9 +5,9 @@ import {
   NewChangeset,
   ModCompWithPackage,
   ModCompGroupWithPackage,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 
-import { defaultConfig } from "@changesets/config";
+import { defaultConfig } from "@abizzle/changesets-config";
 import * as git from "@changesets/git";
 import resolveFrom from "resolve-from";
 import { Packages } from "@manypkg/get-packages";

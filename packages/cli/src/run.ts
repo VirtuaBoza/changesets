@@ -1,10 +1,10 @@
-import { Config } from "@changesets/types";
+import { Config } from "@abizzle/changesets-types";
 import fs from "fs-extra";
 import path from "path";
 import { getPackages } from "@manypkg/get-packages";
 import { getDependentsGraph } from "@changesets/get-dependents-graph";
 import { error } from "@changesets/logger";
-import { read } from "@changesets/config";
+import { read } from "@abizzle/changesets-config";
 import { ExitError } from "@changesets/errors";
 
 import init from "./commands/init";

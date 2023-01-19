@@ -6,7 +6,7 @@ import {
   PackageGroup,
   Fixed,
   SingleChangelogPackageGroup,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 import determineDependents from "./determine-dependents";
 import flattenReleases from "./flatten-releases";
 import matchFixedConstraint, {

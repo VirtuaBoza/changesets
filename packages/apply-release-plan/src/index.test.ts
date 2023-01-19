@@ -4,13 +4,13 @@ import {
   NewChangeset,
   ComprehensiveRelease,
   ComprehensiveGroupRelease,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 import * as git from "@changesets/git";
 import fs from "fs-extra";
 import path from "path";
 import outdent from "outdent";
 import spawn from "spawndamnit";
-import { defaultConfig } from "@changesets/config";
+import { defaultConfig } from "@abizzle/changesets-config";
 
 import applyReleasePlan from "./";
 import { getPackages } from "@manypkg/get-packages";

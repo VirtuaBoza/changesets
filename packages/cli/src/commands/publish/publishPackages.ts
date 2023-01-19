@@ -1,10 +1,10 @@
 import { join } from "path";
 import semver from "semver";
 import chalk from "chalk";
-import { AccessType } from "@changesets/types";
+import { AccessType } from "@abizzle/changesets-types";
 import { Package } from "@manypkg/get-packages";
 import { info, warn } from "@changesets/logger";
-import { PreState } from "@changesets/types";
+import { PreState } from "@abizzle/changesets-types";
 import * as npmUtils from "./npm-utils";
 import { TwoFactorState } from "../../utils/types";
 import isCI from "is-ci";

@@ -1,7 +1,7 @@
 import { read, parse } from "./";
 import jestInCase from "jest-in-case";
 import * as logger from "@changesets/logger";
-import { Config, WrittenConfig } from "@changesets/types";
+import { Config, WrittenConfig } from "@abizzle/changesets-types";
 import { Packages } from "@manypkg/get-packages";
 import { testdir } from "@changesets/test-utils";
 
@@ -42,7 +42,7 @@ test("read reads the config", async () => {
     fixed: [],
     linked: [],
     changelog: false,
-    commit: ["@changesets/cli/commit", { skipCI: "version" }],
+    commit: ["@abizzle/changesets-cli/commit", { skipCI: "version" }],
     access: "restricted",
     baseBranch: "master",
     changedFilePatterns: ["**"],
@@ -67,7 +67,7 @@ test("read reads the config", async () => {
 let defaults: Config = {
   fixed: [],
   linked: [],
-  changelog: ["@changesets/cli/changelog", null],
+  changelog: ["@abizzle/changesets-cli/changelog", null],
   commit: false,
   access: "restricted",
   baseBranch: "master",
@@ -133,7 +133,7 @@ let correctCases: Record<string, CorrectCase> = {
     },
     output: {
       ...defaults,
-      commit: ["@changesets/cli/commit", { skipCI: "version" }],
+      commit: ["@abizzle/changesets-cli/commit", { skipCI: "version" }],
     },
   },
   "commit custom": {
@@ -368,7 +368,7 @@ describe("parser errors", () => {
       unsafeParse({ changelog: {} }, defaultPackages);
     }).toThrowErrorMatchingInlineSnapshot(`
       "Some errors occurred when validating the changesets config:
-      The \`changelog\` option is set as {} when the only valid values are undefined, false, a module path(e.g. "@changesets/cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@changesets/cli/changelog", { someOption: true }])"
+      The \`changelog\` option is set as {} when the only valid values are undefined, false, a module path(e.g. "@abizzle/changesets-cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@abizzle/changesets-cli/changelog", { someOption: true }])"
     `);
   });
   test("changelog array with 3 values", () => {
@@ -383,7 +383,7 @@ describe("parser errors", () => {
         "some-module",
         "something",
         "other"
-      ] when the only valid values are undefined, false, a module path(e.g. "@changesets/cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@changesets/cli/changelog", { someOption: true }])"
+      ] when the only valid values are undefined, false, a module path(e.g. "@abizzle/changesets-cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@abizzle/changesets-cli/changelog", { someOption: true }])"
     `);
   });
   test("changelog array with first value not string", () => {
@@ -394,7 +394,7 @@ describe("parser errors", () => {
       The \`changelog\` option is set as [
         false,
         "something"
-      ] when the only valid values are undefined, false, a module path(e.g. "@changesets/cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@changesets/cli/changelog", { someOption: true }])"
+      ] when the only valid values are undefined, false, a module path(e.g. "@abizzle/changesets-cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@abizzle/changesets-cli/changelog", { someOption: true }])"
     `);
   });
   test("access other string", () => {
@@ -410,7 +410,7 @@ describe("parser errors", () => {
       unsafeParse({ commit: {} }, defaultPackages);
     }).toThrowErrorMatchingInlineSnapshot(`
       "Some errors occurred when validating the changesets config:
-      The \`commit\` option is set as {} when the only valid values are undefined or a boolean or a module path (e.g. "@changesets/cli/commit" or "./some-module") or a tuple with a module path and config for the commit message generator (e.g. ["@changesets/cli/commit", { "skipCI": "version" }])"
+      The \`commit\` option is set as {} when the only valid values are undefined or a boolean or a module path (e.g. "@abizzle/changesets-cli/commit" or "./some-module") or a tuple with a module path and config for the commit message generator (e.g. ["@abizzle/changesets-cli/commit", { "skipCI": "version" }])"
     `);
   });
   describe("fixed", () => {

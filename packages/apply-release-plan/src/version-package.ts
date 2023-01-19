@@ -1,4 +1,4 @@
-import { PackageJSON, VersionType } from "@changesets/types";
+import { PackageJSON, VersionType } from "@abizzle/changesets-types";
 import getVersionRangeType from "@changesets/get-version-range-type";
 import semver from "semver";
 import { shouldUpdateDependencyBasedOnConfig } from "./utils";

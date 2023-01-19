@@ -1,7 +1,7 @@
-import { defaultConfig } from "@changesets/config";
+import { defaultConfig } from "@abizzle/changesets-config";
 import * as git from "@changesets/git";
 import { gitdir, silenceLogsInBlock } from "@changesets/test-utils";
-import { ReleasePlan } from "@changesets/types";
+import { ReleasePlan } from "@abizzle/changesets-types";
 import writeChangeset from "@changesets/write";
 import fs from "fs-extra";
 import path from "path";

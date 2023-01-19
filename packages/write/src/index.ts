@@ -2,7 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 import prettier from "prettier";
 import humanId from "human-id";
-import { Changeset } from "@changesets/types";
+import { Changeset } from "@abizzle/changesets-types";
 
 function getPrettierInstance(cwd: string): typeof prettier {
   try {
