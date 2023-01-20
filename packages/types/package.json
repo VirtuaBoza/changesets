@@ -1,5 +1,5 @@
 {
-  "name": "@changesets/types",
+  "name": "@abizzle/changesets-types",
   "version": "5.2.1",
   "description": "Common types shared between changeset packages",
   "main": "dist/types.cjs.js",
