@@ -1,4 +1,15 @@
-# @changesets/cli
+# @abizzle/changesets-cli
+
+## 2.26.1-next.0
+
+### Patch Changes
+
+- Updated dependencies [850b82e]
+  - @abizzle/changesets-assemble-release-plan@5.3.0-next.0
+  - @abizzle/changesets-apply-release-plan@6.2.0-next.0
+  - @abizzle/changesets-changelog-git@0.2.0-next.0
+  - @abizzle/changesets-config@2.4.0-next.0
+  - @abizzle/changesets-get-release-plan@3.0.17-next.0
 
 ## 2.26.0
 
