@@ -7,10 +7,10 @@
   "license": "MIT",
   "repository": "https://github.com/changesets/changesets/tree/main/packages/assemble-release-plan",
   "dependencies": {
+    "@abizzle/changesets-types": "^5.2.1",
     "@babel/runtime": "^7.20.1",
     "@changesets/errors": "^0.1.4",
     "@changesets/get-dependents-graph": "^1.3.5",
-    "@abizzle/changesets-types": "^5.2.1",
     "@manypkg/get-packages": "^1.1.3",
     "semver": "^5.4.1"
   },
