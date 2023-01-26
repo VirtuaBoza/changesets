@@ -7,6 +7,6 @@
   "license": "MIT",
   "repository": "https://github.com/changesets/changesets/tree/main/packages/changelog-git",
   "dependencies": {
-    "@changesets/types": "^5.2.1"
+    "@abizzle/changesets-types": "^6.0.0-next.2"
   }
 }
