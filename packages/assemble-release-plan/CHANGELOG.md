@@ -1,5 +1,12 @@
 # @abizzle/changesets-assemble-release-plan
 
+## 6.0.0-next.3
+
+### Patch Changes
+
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+
 ## 6.0.0-next.2
 
 ### Patch Changes

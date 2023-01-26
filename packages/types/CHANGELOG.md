@@ -1,5 +1,11 @@
 # @abizzle/changesets-types
 
+## 6.0.0-next.3
+
+### Minor Changes
+
+- c5a83f9: Fix logic to write a single changelog entry for fixed groups
+
 ## 6.0.0-next.2
 
 ### Patch Changes

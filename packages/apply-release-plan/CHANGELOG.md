@@ -1,5 +1,14 @@
 # @abizzle/changesets-apply-release-plan
 
+## 7.0.0-next.3
+
+### Patch Changes
+
+- c5a83f9: Fix logic to write a single changelog entry for fixed groups
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+  - @abizzle/changesets-config@2.4.0-next.1
+
 ## 7.0.0-next.2
 
 ### Patch Changes

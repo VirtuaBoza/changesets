@@ -1,6 +1,6 @@
 {
   "name": "@abizzle/changesets-cli",
-  "version": "2.27.0-next.2",
+  "version": "2.27.0-next.3",
   "description": "Organise your package versioning and publishing to make both contributors and maintainers happy",
   "bin": {
     "changeset": "bin.js"
@@ -30,12 +30,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@abizzle/changesets-apply-release-plan": "^7.0.0-next.2",
-    "@abizzle/changesets-assemble-release-plan": "^6.0.0-next.2",
-    "@abizzle/changesets-changelog-git": "^0.2.0-next.0",
-    "@abizzle/changesets-config": "^2.4.0-next.0",
-    "@abizzle/changesets-get-release-plan": "^3.0.17-next.2",
-    "@abizzle/changesets-types": "^6.0.0-next.2",
+    "@abizzle/changesets-apply-release-plan": "^7.0.0-next.3",
+    "@abizzle/changesets-assemble-release-plan": "^6.0.0-next.3",
+    "@abizzle/changesets-changelog-git": "^0.2.0-next.1",
+    "@abizzle/changesets-config": "^2.4.0-next.1",
+    "@abizzle/changesets-get-release-plan": "^3.0.17-next.3",
+    "@abizzle/changesets-types": "^6.0.0-next.3",
     "@babel/runtime": "^7.20.1",
     "@changesets/errors": "^0.1.4",
     "@changesets/get-dependents-graph": "^1.3.5",

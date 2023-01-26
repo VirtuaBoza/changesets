@@ -1,5 +1,12 @@
 # @abizzle/changesets-changelog-github
 
+## 0.5.0-next.1
+
+### Patch Changes
+
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+
 ## 0.5.0-next.0
 
 ### Minor Changes
