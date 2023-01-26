@@ -1,5 +1,13 @@
 # @abizzle/changesets-get-release-plan
 
+## 3.0.17-next.2
+
+### Patch Changes
+
+- Fixes dist files
+- Updated dependencies
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.2
+
 ## 3.0.17-next.1
 
 ### Patch Changes

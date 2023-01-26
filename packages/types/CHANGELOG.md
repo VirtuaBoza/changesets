@@ -1,5 +1,11 @@
 # @abizzle/changesets-types
 
+## 6.0.0-next.2
+
+### Patch Changes
+
+- Fixes dist files
+
 ## 6.0.0-next.1
 
 ### Major Changes

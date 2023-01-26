@@ -1,5 +1,15 @@
 # @abizzle/changesets-cli
 
+## 2.27.0-next.2
+
+### Patch Changes
+
+- Fixes dist files
+- Updated dependencies
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.2
+  - @abizzle/changesets-apply-release-plan@7.0.0-next.2
+  - @abizzle/changesets-get-release-plan@3.0.17-next.2
+
 ## 2.27.0-next.1
 
 ### Minor Changes

@@ -1,5 +1,13 @@
 # @abizzle/changesets-assemble-release-plan
 
+## 6.0.0-next.2
+
+### Patch Changes
+
+- Fixes dist files
+- Updated dependencies
+  - @abizzle/changesets-types@6.0.0-next.2
+
 ## 6.0.0-next.1
 
 ### Major Changes
