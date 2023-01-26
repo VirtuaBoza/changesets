@@ -1,11 +1,10 @@
 ---
-"@abizzle/changesets-assemble-release-plan": major
-"@abizzle/changesets-apply-release-plan": major
+"@abizzle/changesets-assemble-release-plan": minor
+"@abizzle/changesets-apply-release-plan": minor
 "@abizzle/changesets-changelog-github": minor
 "@abizzle/changesets-changelog-git": minor
-"@abizzle/changesets-cli": minor
 "@abizzle/changesets-config": minor
-"@abizzle/changesets-types": major
+"@abizzle/changesets-types": minor
 ---
 
 Add support for single changelog fixed package groups.
