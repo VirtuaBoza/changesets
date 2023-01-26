@@ -1,6 +1,6 @@
 {
   "name": "@abizzle/changesets-apply-release-plan",
-  "version": "6.2.0-next.0",
+  "version": "7.0.0-next.1",
   "description": "Takes a release plan and applies it to packages",
   "main": "dist/changesets-apply-release-plan.cjs.js",
   "module": "dist/changesets-apply-release-plan.esm.js",
@@ -8,7 +8,7 @@
   "repository": "https://github.com/changesets/changesets/tree/main/packages/apply-release-plan",
   "dependencies": {
     "@abizzle/changesets-config": "^2.4.0-next.0",
-    "@abizzle/changesets-types": "^5.3.0-next.0",
+    "@abizzle/changesets-types": "^6.0.0-next.1",
     "@babel/runtime": "^7.20.1",
     "@changesets/get-version-range-type": "^0.3.2",
     "@changesets/git": "^2.0.0",

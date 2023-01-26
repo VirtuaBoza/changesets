@@ -1,5 +1,16 @@
 # @abizzle/changesets-apply-release-plan
 
+## 7.0.0-next.1
+
+### Major Changes
+
+- efd8c06: Fixes single changelog fixed groups.
+
+### Patch Changes
+
+- Updated dependencies [efd8c06]
+  - @abizzle/changesets-types@6.0.0-next.1
+
 ## 6.2.0-next.0
 
 ### Minor Changes

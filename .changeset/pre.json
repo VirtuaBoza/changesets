@@ -25,6 +25,7 @@
     "@changesets/test-utils": "0.0.5"
   },
   "changesets": [
-    "forty-trains-accept"
+    "forty-trains-accept",
+    "strange-jars-nail"
   ]
 }

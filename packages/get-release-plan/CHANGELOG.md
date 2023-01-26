@@ -1,5 +1,12 @@
 # @abizzle/changesets-get-release-plan
 
+## 3.0.17-next.1
+
+### Patch Changes
+
+- Updated dependencies [efd8c06]
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.1
+
 ## 3.0.17-next.0
 
 ### Patch Changes
