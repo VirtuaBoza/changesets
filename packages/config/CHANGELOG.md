@@ -1,4 +1,33 @@
-# @changesets/config
+# @abizzle/changesets-config
+
+## 2.4.0-next.1
+
+### Patch Changes
+
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+
+## 2.4.0-next.0
+
+### Minor Changes
+
+- 850b82e: Add support for single changelog fixed package groups.
+
+  Optionally supply an object as a fixed package group entry like so:
+
+  ```json
+  {
+    "fixed": [
+      {
+        "group": ["@changesets/button", "@changesets/theme"],
+        "changelog": "CHANGELOG.md",
+        "name": "UI Packages"
+      }
+    ]
+  }
+  ```
+
+  This will create/update a single changelog at `<projectRoot>/CHANGELOG.md` with changelog entries for `@changesets/button` and `@changesets/theme` under the title "UI Packages".
 
 ## 2.3.0
 

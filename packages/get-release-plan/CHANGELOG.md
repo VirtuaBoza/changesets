@@ -1,4 +1,36 @@
-# @changesets/get-release-plan
+# @abizzle/changesets-get-release-plan
+
+## 3.0.17-next.3
+
+### Patch Changes
+
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.3
+  - @abizzle/changesets-config@2.4.0-next.1
+
+## 3.0.17-next.2
+
+### Patch Changes
+
+- Fixes dist files
+- Updated dependencies
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.2
+
+## 3.0.17-next.1
+
+### Patch Changes
+
+- Updated dependencies [efd8c06]
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.1
+
+## 3.0.17-next.0
+
+### Patch Changes
+
+- Updated dependencies [850b82e]
+  - @abizzle/changesets-assemble-release-plan@5.3.0-next.0
+  - @abizzle/changesets-config@2.4.0-next.0
 
 ## 3.0.16
 

@@ -1,4 +1,60 @@
-# @changesets/apply-release-plan
+# @abizzle/changesets-apply-release-plan
+
+## 7.0.0-next.3
+
+### Patch Changes
+
+- c5a83f9: Fix logic to write a single changelog entry for fixed groups
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+  - @abizzle/changesets-config@2.4.0-next.1
+
+## 7.0.0-next.2
+
+### Patch Changes
+
+- Fixes dist files
+- Updated dependencies
+  - @abizzle/changesets-types@6.0.0-next.2
+
+## 7.0.0-next.1
+
+### Major Changes
+
+- efd8c06: Fixes single changelog fixed groups.
+
+### Patch Changes
+
+- Updated dependencies [efd8c06]
+  - @abizzle/changesets-types@6.0.0-next.1
+
+## 6.2.0-next.0
+
+### Minor Changes
+
+- 850b82e: Add support for single changelog fixed package groups.
+
+  Optionally supply an object as a fixed package group entry like so:
+
+  ```json
+  {
+    "fixed": [
+      {
+        "group": ["@changesets/button", "@changesets/theme"],
+        "changelog": "CHANGELOG.md",
+        "name": "UI Packages"
+      }
+    ]
+  }
+  ```
+
+  This will create/update a single changelog at `<projectRoot>/CHANGELOG.md` with changelog entries for `@changesets/button` and `@changesets/theme` under the title "UI Packages".
+
+### Patch Changes
+
+- Updated dependencies [850b82e]
+  - @abizzle/changesets-config@2.4.0-next.0
+  - @abizzle/changesets-types@5.3.0-next.0
 
 ## 6.1.3
 

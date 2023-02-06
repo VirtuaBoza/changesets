@@ -3,7 +3,7 @@ import { ExitError } from "@changesets/errors";
 import { error, log, success, warn } from "@changesets/logger";
 import * as git from "@changesets/git";
 import { readPreState } from "@changesets/pre";
-import { Config, PreState } from "@changesets/types";
+import { Config, PreState } from "@abizzle/changesets-types";
 import { getPackages } from "@manypkg/get-packages";
 import chalk from "chalk";
 import { getUntaggedPrivatePackages } from "./getUntaggedPrivatePackages";

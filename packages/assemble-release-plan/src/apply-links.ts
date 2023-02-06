@@ -1,4 +1,4 @@
-import { Linked } from "@changesets/types";
+import { Linked } from "@abizzle/changesets-types";
 import { Package } from "@manypkg/get-packages";
 import { InternalRelease } from "./types";
 import { getCurrentHighestVersion, getHighestReleaseType } from "./utils";

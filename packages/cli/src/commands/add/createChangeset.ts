@@ -4,7 +4,7 @@ import semver from "semver";
 
 import * as cli from "../../utils/cli-utilities";
 import { error, log } from "@changesets/logger";
-import { Release, PackageJSON } from "@changesets/types";
+import { Release, PackageJSON } from "@abizzle/changesets-types";
 import { Package } from "@manypkg/get-packages";
 import { ExitError } from "@changesets/errors";
 

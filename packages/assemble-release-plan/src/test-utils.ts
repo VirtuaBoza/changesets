@@ -1,4 +1,4 @@
-import { NewChangeset, Release, VersionType } from "@changesets/types";
+import { NewChangeset, Release, VersionType } from "@abizzle/changesets-types";
 import { Package, Packages } from "@manypkg/get-packages";
 
 function getPackage({

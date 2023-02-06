@@ -82,9 +82,9 @@ ${format("", err).replace(process.cwd(), "<cwd>")}
 
 ## Versions
 
-- @changesets/cli@${
+- @abizzle/changesets-cli@${
         // eslint-disable-next-line import/no-extraneous-dependencies
-        require("@changesets/cli/package.json").version
+        require("@abizzle/changesets-cli/package.json").version
       }
 - node@${process.version}
 

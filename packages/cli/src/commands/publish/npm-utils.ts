@@ -1,6 +1,6 @@
 import { ExitError } from "@changesets/errors";
 import { error, info, warn } from "@changesets/logger";
-import { PackageJSON } from "@changesets/types";
+import { PackageJSON } from "@abizzle/changesets-types";
 import pLimit from "p-limit";
 import preferredPM from "preferred-pm";
 import chalk from "chalk";

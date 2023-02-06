@@ -3,7 +3,7 @@ import {
   VersionType,
   ChangelogFunctions,
   ModCompWithPackage,
-} from "@changesets/types";
+} from "@abizzle/changesets-types";
 
 const getReleaseLine = async (
   changeset: NewChangesetWithCommit,
@@ -13,8 +13,10 @@ const getReleaseLine = async (
     .split("\n")
     .map((l) => l.trimRight());
 
-  let returnVal = `- ${
-    changeset.commit ? `${changeset.commit}: ` : ""
+  let returnVal = `- ${changeset.commit ? `${changeset.commit}: ` : ""}${
+    changeset.groupedChangelog
+      ? `**(${changeset.releases.map(({ name }) => name).join(", ")})** `
+      : ""
   }${firstLine}`;
 
   if (futureLines.length > 0) {

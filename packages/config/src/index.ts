@@ -10,13 +10,14 @@ import {
   Fixed,
   Linked,
   PackageGroup,
-} from "@changesets/types";
+  SingleChangelogPackageGroup,
+} from "@abizzle/changesets-types";
 import packageJson from "../package.json";
 import { getDependentsGraph } from "@changesets/get-dependents-graph";
 
 export let defaultWrittenConfig = {
-  $schema: `https://unpkg.com/@changesets/config@${packageJson.version}/schema.json`,
-  changelog: "@changesets/cli/changelog",
+  $schema: `https://unpkg.com/@abizzle/changesets-config@${packageJson.version}/schema.json`,
+  changelog: "@abizzle/changesets-cli/changelog",
   commit: false,
   fixed: [] as Fixed,
   linked: [] as Linked,
@@ -26,8 +27,10 @@ export let defaultWrittenConfig = {
   ignore: [] as ReadonlyArray<string>,
 } as const;
 
-function flatten<T>(arr: Array<T[]>): T[] {
-  return ([] as T[]).concat(...arr);
+function flatten<T>(arr: Array<T[] | { group: T[] }>): T[] {
+  return ([] as T[]).concat(
+    ...arr.map((a) => (Array.isArray(a) ? a : a.group))
+  );
 }
 
 function getNormalizedChangelogOption(
@@ -49,7 +52,7 @@ function getNormalizedCommitOption(
     return false;
   }
   if (thing === true) {
-    return ["@changesets/cli/commit", { skipCI: "version" }];
+    return ["@abizzle/changesets-cli/commit", { skipCI: "version" }];
   }
   if (typeof thing === "string") {
     return [thing, null];
@@ -67,7 +70,7 @@ function getUnmatchedPatterns(
   );
 }
 
-const havePackageGroupsCorrectShape = (
+const haveLinkedPackageGroupsCorrectShape = (
   pkgGroups: ReadonlyArray<PackageGroup>
 ) => {
   return (
@@ -76,6 +79,33 @@ const havePackageGroupsCorrectShape = (
       (arr) =>
         isArray(arr) && arr.every((pkgName) => typeof pkgName === "string")
     )
+  );
+};
+
+const haveFixedPackageGroupsCorrectShape = (
+  pkgGroups: unknown
+): pkgGroups is Fixed => {
+  return (
+    isArray(pkgGroups) &&
+    pkgGroups.every(
+      (group) =>
+        (isArray(group) && group.every((entry) => typeof entry === "string")) ||
+        isSingleChangelogFixedPackageGroup(group)
+    )
+  );
+};
+
+const isSingleChangelogFixedPackageGroup = (
+  pkgGroup: unknown
+): pkgGroup is SingleChangelogPackageGroup => {
+  return (
+    isObject(pkgGroup) &&
+    isArray(pkgGroup.group) &&
+    (pkgGroup.group as unknown[]).every(
+      (pkgName) => typeof pkgName === "string"
+    ) &&
+    typeof pkgGroup.changelog === "string" &&
+    typeof pkgGroup.name === "string"
   );
 };
 
@@ -89,6 +119,10 @@ function isArray<T>(
     : readonly any[]
   : any[] {
   return Array.isArray(arg);
+}
+
+function isObject(arg: unknown): arg is Record<string, any> {
+  return !isArray(arg) && Boolean(arg && typeof arg === "object");
 }
 
 export let read = async (cwd: string, packages: Packages) => {
@@ -117,7 +151,7 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
         json.changelog,
         null,
         2
-      )} when the only valid values are undefined, false, a module path(e.g. "@changesets/cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@changesets/cli/changelog", { someOption: true }])`
+      )} when the only valid values are undefined, false, a module path(e.g. "@abizzle/changesets-cli/changelog" or "./some-module") or a tuple with a module path and config for the changelog generator(e.g. ["@abizzle/changesets-cli/changelog", { someOption: true }])`
     );
   }
 
@@ -157,7 +191,7 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
         json.commit,
         null,
         2
-      )} when the only valid values are undefined or a boolean or a module path (e.g. "@changesets/cli/commit" or "./some-module") or a tuple with a module path and config for the commit message generator (e.g. ["@changesets/cli/commit", { "skipCI": "version" }])`
+      )} when the only valid values are undefined or a boolean or a module path (e.g. "@abizzle/changesets-cli/commit" or "./some-module") or a tuple with a module path and config for the commit message generator (e.g. ["@abizzle/changesets-cli/commit", { "skipCI": "version" }])`
     );
   }
   if (json.baseBranch !== undefined && typeof json.baseBranch !== "string") {
@@ -184,21 +218,31 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
     );
   }
 
-  let fixed: string[][] = [];
+  let fixed: Array<
+    | string[]
+    | {
+        group: string[];
+        changelog: string;
+        name: string;
+      }
+  > = [];
   if (json.fixed !== undefined) {
-    if (!havePackageGroupsCorrectShape(json.fixed)) {
+    if (!haveFixedPackageGroupsCorrectShape(json.fixed)) {
       messages.push(
         `The \`fixed\` option is set as ${JSON.stringify(
           json.fixed,
           null,
           2
-        )} when the only valid values are undefined or an array of arrays of package names`
+        )} when the only valid values are undefined or an array of either arrays of package names or objects with a "group" property as an array of package names and a "changelog" property as a file path.`
       );
     } else {
       let foundPkgNames = new Set<string>();
       let duplicatedPkgNames = new Set<string>();
 
-      for (let fixedGroup of json.fixed) {
+      for (let fixedGrouping of json.fixed) {
+        const fixedGroup = isSingleChangelogFixedPackageGroup(fixedGrouping)
+          ? fixedGrouping.group
+          : fixedGrouping;
         messages.push(
           ...getUnmatchedPatterns(fixedGroup, pkgNames).map(
             (pkgOrGlob) =>
@@ -207,7 +251,15 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
         );
 
         let expandedFixedGroup = micromatch(pkgNames, fixedGroup);
-        fixed.push(expandedFixedGroup);
+        fixed.push(
+          isSingleChangelogFixedPackageGroup(fixedGrouping)
+            ? {
+                group: expandedFixedGroup,
+                name: fixedGrouping.name,
+                changelog: fixedGrouping.changelog,
+              }
+            : expandedFixedGroup
+        );
 
         for (let fixedPkgName of expandedFixedGroup) {
           if (foundPkgNames.has(fixedPkgName)) {
@@ -229,7 +281,7 @@ export let parse = (json: WrittenConfig, packages: Packages): Config => {
 
   let linked: string[][] = [];
   if (json.linked !== undefined) {
-    if (!havePackageGroupsCorrectShape(json.linked)) {
+    if (!haveLinkedPackageGroupsCorrectShape(json.linked)) {
       messages.push(
         `The \`linked\` option is set as ${JSON.stringify(
           json.linked,

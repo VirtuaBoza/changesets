@@ -1,4 +1,50 @@
-# @changesets/cli
+# @abizzle/changesets-cli
+
+## 2.27.0-next.3
+
+### Patch Changes
+
+- Updated dependencies [c5a83f9]
+  - @abizzle/changesets-types@6.0.0-next.3
+  - @abizzle/changesets-apply-release-plan@7.0.0-next.3
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.3
+  - @abizzle/changesets-changelog-git@0.2.0-next.1
+  - @abizzle/changesets-config@2.4.0-next.1
+  - @abizzle/changesets-get-release-plan@3.0.17-next.3
+
+## 2.27.0-next.2
+
+### Patch Changes
+
+- Fixes dist files
+- Updated dependencies
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.2
+  - @abizzle/changesets-apply-release-plan@7.0.0-next.2
+  - @abizzle/changesets-get-release-plan@3.0.17-next.2
+
+## 2.27.0-next.1
+
+### Minor Changes
+
+- efd8c06: Fixes single changelog fixed groups.
+
+### Patch Changes
+
+- Updated dependencies [efd8c06]
+  - @abizzle/changesets-assemble-release-plan@6.0.0-next.1
+  - @abizzle/changesets-apply-release-plan@7.0.0-next.1
+  - @abizzle/changesets-get-release-plan@3.0.17-next.1
+
+## 2.26.1-next.0
+
+### Patch Changes
+
+- Updated dependencies [850b82e]
+  - @abizzle/changesets-assemble-release-plan@5.3.0-next.0
+  - @abizzle/changesets-apply-release-plan@6.2.0-next.0
+  - @abizzle/changesets-changelog-git@0.2.0-next.0
+  - @abizzle/changesets-config@2.4.0-next.0
+  - @abizzle/changesets-get-release-plan@3.0.17-next.0
 
 ## 2.26.0
 
