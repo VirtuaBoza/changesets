@@ -1,5 +1,11 @@
 # @abizzle/changesets-apply-release-plan
 
+## 7.0.0-next.4
+
+### Patch Changes
+
+- Add `pre.json` to the version commit
+
 ## 7.0.0-next.3
 
 ### Patch Changes

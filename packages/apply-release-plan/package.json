@@ -1,6 +1,6 @@
 {
   "name": "@abizzle/changesets-apply-release-plan",
-  "version": "7.0.0-next.3",
+  "version": "7.0.0-next.4",
   "description": "Takes a release plan and applies it to packages",
   "main": "dist/changesets-apply-release-plan.cjs.js",
   "module": "dist/changesets-apply-release-plan.esm.js",

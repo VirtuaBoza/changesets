@@ -1,5 +1,12 @@
 # @abizzle/changesets-cli
 
+## 2.27.0-next.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @abizzle/changesets-apply-release-plan@7.0.0-next.4
+
 ## 2.27.0-next.3
 
 ### Patch Changes
